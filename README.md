@@ -4,15 +4,30 @@ Modern React application template built with React + TypeScript + Vite.
 
 ## 🚀 Quick Start
 
+### **Clone Repository:**
 ```bash
-# Install
+git clone https://github.com/BoongMai/ReactBaseSource2025.git
+cd ReactBaseSource2025
+```
+
+### **Install Dependencies:**
+```bash
 npm install
+```
 
-# Start dev
+### **Start Development:**
+```bash
 npm run dev
+```
 
-# Build
+### **Build for Production:**
+```bash
 npm run build
+```
+
+### **Preview Production Build:**
+```bash
+npm run preview
 ```
 
 ## 📁 Project Structure
