@@ -1,0 +1,28 @@
+# Base Source QA Deployment
+# Usage: docker-compose -f deploy-qa.yml up -d
+
+version: '3.8'
+
+services:
+  base-source-qa:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NODE_ENV=development
+        - VITE_APP_ENV=qa
+    container_name: base-source-qa
+    ports:
+      - '3001:80'
+    environment:
+      - VITE_API_URL=${VITE_API_URL:-https://api-qa.example.com}
+      - VITE_APP_NAME=${VITE_APP_NAME:-Base Source QA}
+      - VITE_APP_ENV=qa
+      - VITE_DEBUG=true
+      - VITE_ENABLE_MOCKING=true
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost/health']
+      interval: 30s
+      timeout: 10s
+      retries: 3

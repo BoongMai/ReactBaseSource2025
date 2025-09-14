@@ -1,0 +1,146 @@
+import { useTranslation as useI18nTranslation } from 'react-i18next';
+
+// Re-export useTranslation with better typing
+export const useTranslation = useI18nTranslation;
+
+// Custom hook for common translations
+export const useCommonTranslation = () => {
+  const { t } = useI18nTranslation();
+
+  return {
+    t,
+    // Common translations
+    common: {
+      loading: t('common.loading'),
+      error: t('common.error'),
+      success: t('common.success'),
+      cancel: t('common.cancel'),
+      confirm: t('common.confirm'),
+      save: t('common.save'),
+      edit: t('common.edit'),
+      delete: t('common.delete'),
+      view: t('common.view'),
+      copy: t('common.copy'),
+      search: t('common.search'),
+      filter: t('common.filter'),
+      reset: t('common.reset'),
+      submit: t('common.submit'),
+      back: t('common.back'),
+      next: t('common.next'),
+      previous: t('common.previous'),
+      close: t('common.close'),
+      open: t('common.open'),
+      refresh: t('common.refresh'),
+      download: t('common.download'),
+      upload: t('common.upload'),
+      print: t('common.print'),
+      share: t('common.share'),
+      settings: t('common.settings'),
+      profile: t('common.profile'),
+      logout: t('common.logout'),
+      login: t('common.login'),
+      register: t('common.register'),
+      home: t('common.home'),
+      dashboard: t('common.dashboard'),
+      notifications: t('common.notifications'),
+      help: t('common.help'),
+      about: t('common.about'),
+      contact: t('common.contact'),
+      privacy: t('common.privacy'),
+      terms: t('common.terms'),
+      language: t('common.language'),
+      theme: t('common.theme'),
+      dark: t('common.dark'),
+      light: t('common.light'),
+      system: t('common.system'),
+    },
+    // Navigation translations
+    navigation: {
+      home: t('navigation.home'),
+      dashboard: t('navigation.dashboard'),
+      profile: t('navigation.profile'),
+      settings: t('navigation.settings'),
+      demoPages: t('navigation.demoPages'),
+      advancedTable: t('navigation.advancedTable'),
+      formDemo: t('navigation.formDemo'),
+      chartDemo: t('navigation.chartDemo'),
+      loadingDemo: t('navigation.loadingDemo'),
+      testTable: t('navigation.testTable'),
+    },
+    // Auth translations
+    auth: {
+      login: t('auth.login'),
+      register: t('auth.register'),
+      logout: t('auth.logout'),
+      email: t('auth.email'),
+      password: t('auth.password'),
+      confirmPassword: t('auth.confirmPassword'),
+      forgotPassword: t('auth.forgotPassword'),
+      rememberMe: t('auth.rememberMe'),
+      loginSuccess: t('auth.loginSuccess'),
+      loginError: t('auth.loginError'),
+      registerSuccess: t('auth.registerSuccess'),
+      registerError: t('auth.registerError'),
+      logoutSuccess: t('auth.logoutSuccess'),
+      invalidCredentials: t('auth.invalidCredentials'),
+      emailRequired: t('auth.emailRequired'),
+      passwordRequired: t('auth.passwordRequired'),
+      emailInvalid: t('auth.emailInvalid'),
+      passwordTooShort: t('auth.passwordTooShort'),
+      passwordsDoNotMatch: t('auth.passwordsDoNotMatch'),
+    },
+    // Loading translations
+    loading: {
+      appLoading: t('loading.appLoading'),
+    },
+    // Table translations
+    table: {
+      noData: t('table.noData'),
+      loading: t('table.loading'),
+      total: t('table.total'),
+      items: t('table.items'),
+      page: t('table.page'),
+      of: t('table.of'),
+      rowsPerPage: t('table.rowsPerPage'),
+      search: t('table.search'),
+      filter: t('table.filter'),
+      clear: t('table.clear'),
+      actions: t('table.actions'),
+      view: t('table.view'),
+      edit: t('table.edit'),
+      copy: t('table.copy'),
+      delete: t('table.delete'),
+    },
+    // Error translations
+    errors: {
+      pageNotFound: t('errors.pageNotFound'),
+      pageNotFoundDesc: t('errors.pageNotFoundDesc'),
+      goHome: t('errors.goHome'),
+      tryAgain: t('errors.tryAgain'),
+      networkError: t('errors.networkError'),
+      serverError: t('errors.serverError'),
+      timeout: t('errors.timeout'),
+      unauthorized: t('errors.unauthorized'),
+      forbidden: t('errors.forbidden'),
+      notFound: t('errors.notFound'),
+      internalError: t('errors.internalError'),
+    },
+    // Theme translations
+    theme: {
+      light: t('theme.light'),
+      dark: t('theme.dark'),
+      system: t('theme.system'),
+      themeMode: t('theme.themeMode'),
+      followSystem: t('theme.followSystem'),
+    },
+    // Notification translations
+    notifications: {
+      enablePush: t('notifications.enablePush'),
+      disablePush: t('notifications.disablePush'),
+      pushEnabled: t('notifications.pushEnabled'),
+      pushDisabled: t('notifications.pushDisabled'),
+      permissionDenied: t('notifications.permissionDenied'),
+      browserNotSupported: t('notifications.browserNotSupported'),
+    },
+  };
+};

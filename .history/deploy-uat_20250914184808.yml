@@ -1,0 +1,28 @@
+# Base Source UAT Deployment
+# Usage: docker-compose -f deploy-uat.yml up -d
+
+version: '3.8'
+
+services:
+  base-source-uat:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NODE_ENV=production
+        - VITE_APP_ENV=uat
+    container_name: base-source-uat
+    ports:
+      - '3002:80'
+    environment:
+      - VITE_API_URL=${VITE_API_URL:-https://api-uat.example.com}
+      - VITE_APP_NAME=${VITE_APP_NAME:-Base Source UAT}
+      - VITE_APP_ENV=uat
+      - VITE_DEBUG=false
+      - VITE_ENABLE_MOCKING=false
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost/health']
+      interval: 30s
+      timeout: 10s
+      retries: 3
